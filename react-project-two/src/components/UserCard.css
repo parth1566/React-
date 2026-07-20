@@ -1,0 +1,63 @@
+/* Container for all cards - GRID LAYOUT */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual card */
+.user-container {
+  background-color: #f5e6d3;  /* Antiquewhite */
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card title */
+.user-container h2 {
+  color: #333;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* Card image */
+#user-img {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 3px solid #ddd;
+}
+
+/* Card description */
+.user-container p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+/* Responsive - 2 columns on tablet */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive - 1 column on mobile */
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
