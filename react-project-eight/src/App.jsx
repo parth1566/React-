@@ -16,9 +16,15 @@ function App() {
 
   //variation: 2
   //that runs on only first render
+    // useEffect(() => {
+    // alert("I wil run on only first render")
+    // }, [])
+
+    //variation: 3
     useEffect(() => {
-    alert("I wil run on only first render")
-    }, [])
+      alert("I will run everytime when count is updated")
+    }, [count])
+    
     
 
 
