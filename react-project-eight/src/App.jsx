@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import LoggerComponent from './components/LoggerComponent';
 import TimerComponent from './components/TimerComponent';
 import DataFetcher from './components/DataFetcher';
+import ResizeComponent from './components/ResizeComponent';
 
 function App() {
   // const[count, setCount] = useState(0);
@@ -60,7 +61,8 @@ function App() {
     <div>
       {/* <LoggerComponent/> */}
       {/* <TimerComponent/> */}
-      <DataFetcher/>
+      {/* <DataFetcher/> */}
+      <ResizeComponent/>  
       {/* <button onClick={handleClickCount}>
         update count     
       </button>
