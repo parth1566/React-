@@ -2,6 +2,7 @@ import { useEffectEvent } from 'react';
 import { useState } from 'react'
 import { useEffect } from 'react'
 import LoggerComponent from './components/LoggerComponent';
+import TimerComponent from './components/TimerComponent';
 
 function App() {
   // const[count, setCount] = useState(0);
@@ -56,7 +57,8 @@ function App() {
 
   return (
     <div>
-      <LoggerComponent/>
+      {/* <LoggerComponent/> */}
+      <TimerComponent/>
       {/* <button onClick={handleClickCount}>
         update count     
       </button>
