@@ -1,10 +1,11 @@
 import { useEffectEvent } from 'react';
 import { useState } from 'react'
 import { useEffect } from 'react'
+import LoggerComponent from './components/LoggerComponent';
 
 function App() {
-  const[count, setCount] = useState(0);
-  const[total, setTotal] = useState(1);
+  // const[count, setCount] = useState(0);
+  // const[total, setTotal] = useState(1);
   //first -> side-effect function
   //second -> clean-up function
   //third -> comma separated list
@@ -34,28 +35,29 @@ function App() {
 
     //variation: 5
     //let's add a cleanup function
-    useEffect(() => {
-      alert("Count is updated")
+    // useEffect(() => {
+    //   alert("Count is updated")
     
-      return () => {
-        alert("count is unmounted from UI")
-      }
-    }, [count])
+    //   return () => {
+    //     alert("count is unmounted from UI")
+    //   }
+    // }, [count])
     
 
 
-  function handleClickCount() {
-    setCount(count + 1);
+  // function handleClickCount() {
+  //   setCount(count + 1);
     
-  }
+  // }
 
-  function handleClickTotal() {
-    setTotal(total + 1);
-  }
+  // function handleClickTotal() {
+  //   setTotal(total + 1);
+  // }
 
   return (
     <div>
-      <button onClick={handleClickCount}>
+      <LoggerComponent/>
+      {/* <button onClick={handleClickCount}>
         update count     
       </button>
       <br />
@@ -65,7 +67,7 @@ function App() {
         update Total
       </button>
       <br />
-      Total is: {total}
+      Total is: {total} */}
     </div>
     
   )
