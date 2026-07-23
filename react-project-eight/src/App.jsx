@@ -28,9 +28,21 @@ function App() {
 
     //variation: 4
     //multiple dependencies
+    // useEffect(() => {
+    //   alert("I will run everytime when count/ total is updated")
+    // }, [count, total])
+
+    //variation: 5
+    //let's add a cleanup function
     useEffect(() => {
-      alert("I will run everytime when count/ total is updated")
-    }, [count, total])
+      alert("Count is updated")
+    
+      return () => {
+        alert("count is unmounted from UI")
+      }
+    }, [count])
+    
+
 
   function handleClickCount() {
     setCount(count + 1);
