@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 
 function App() {
   const[count, setCount] = useState(0);
+  const[total, setTotal] = useState(1);
   //first -> side-effect function
   //second -> clean-up function
   //third -> comma separated list
@@ -21,26 +22,38 @@ function App() {
     // }, [])
 
     //variation: 3
+    // useEffect(() => {
+    //   alert("I will run everytime when count is updated")
+    // }, [count])
+
+    //variation: 4
+    //multiple dependencies
     useEffect(() => {
-      alert("I will run everytime when count is updated")
-    }, [count])
-    
-    
+      alert("I will run everytime when count/ total is updated")
+    }, [count, total])
 
-
-
-
-  function handleClick() {
+  function handleClickCount() {
     setCount(count + 1);
+    
+  }
+
+  function handleClickTotal() {
+    setTotal(total + 1);
   }
 
   return (
     <div>
-      <button onClick={handleClick}>
-      Click me 
+      <button onClick={handleClickCount}>
+        update count     
       </button>
       <br />
       Count is: {count}
+      <br />
+      <button onClick={handleClickTotal}>
+        update Total
+      </button>
+      <br />
+      Total is: {total}
     </div>
     
   )
