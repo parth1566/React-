@@ -1,3 +1,4 @@
+import { useEffectEvent } from 'react';
 import { useState } from 'react'
 import { useEffect } from 'react'
 
@@ -9,10 +10,20 @@ function App() {
   
   //variation : 1
   //runs on every render
-  useEffect(() => {
-  alert("I wil run on each render");
-  })
-  
+  // useEffect(() => {
+  // alert("I wil run on each render");
+  // })
+
+  //variation: 2
+  //that runs on only first render
+    useEffect(() => {
+    alert("I wil run on only first render")
+    }, [])
+    
+
+
+
+
   function handleClick() {
     setCount(count + 1);
   }
