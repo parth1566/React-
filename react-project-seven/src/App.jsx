@@ -24,17 +24,17 @@ function App() {
   return (
     <div>
 
-      {/* <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleInputChange}/>
         <button type='submit'>Submit</button>
-      </form> */}
-    <p onMouseOver={handleMouseOver} style={{border : "1px solid blue"}}> 
+      </form>
+    {/* <p onMouseOver={handleMouseOver} style={{border : "1px solid blue"}}> 
       I am a Para
     </p>
 
     <button onClick={handleClick}>
       Click Me
-    </button>
+    </button> */}
     </div>
   )
 }
