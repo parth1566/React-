@@ -23,11 +23,13 @@ function App() {
 
   return (
     <div>
-
-      <form onSubmit={handleSubmit}>
+        <button onClick={() => alert("Button clicked")}>
+          Click me
+        </button>
+      {/* <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleInputChange}/>
         <button type='submit'>Submit</button>
-      </form>
+      </form> */}
     {/* <p onMouseOver={handleMouseOver} style={{border : "1px solid blue"}}> 
       I am a Para
     </p>
