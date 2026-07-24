@@ -3,7 +3,7 @@ import ChildA from './components/ChildA';
 import './App.css'
 
 // Step 1: create context
-//const UserContext = createContext();
+const UserContext = createContext();
 // Step 2: wrap all the child inside a provider
 // Step 3: pass value
 // Step 4: consume the data inside consumer
@@ -12,14 +12,18 @@ import './App.css'
 const ThemeContext = createContext();
 
 function App() {
-  // const[user, setUser] = useState({name: "Parth"});
+  const[user, setUser] = useState({name: "Parth"});
   const[theme, setTheme] = useState('light');
+
   return (
+    <UserContext.Provider value={user}>
       <ThemeContext.Provider value={{theme, setTheme}}>
         <div id='container' style={{backgroundColor: theme === 'light' ? 'beige' : 'black'}}>
            <ChildA/>
         </div>
       </ThemeContext.Provider>
+    </UserContext.Provider>
+      
 
 
 
@@ -33,5 +37,5 @@ function App() {
 }
 
 export default App
-//export {UserContext}
+export {UserContext}
 export {ThemeContext}
