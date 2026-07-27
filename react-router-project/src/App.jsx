@@ -1,88 +1,27 @@
-import { useState } from 'react'
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import Home from './components/Home';
-import Dashboard from './components/Dashboard';
-import About from './components/About';
-import Navbar from './components/Navbar';
-import ParamComp from './components/ParamComp';
-import Reports from './components/Reports';
-import Courses from './components/Courses';
-import MockTests from './components/MockTests';
-import NotFound from './components/NotFound';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import RecipeLayout from './RecipeBook/RecipeLayout';
+import Home from './RecipeBook/Home';
+import RecipeList from './RecipeBook/RecipeList';
+import RecipeDetail from './RecipeBook/RecipeDetail';
+import Favorites from './RecipeBook/Favorites';
+import FavoritesProvider from './RecipeBook/FavoritesProvider';
 
-
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: 
-      <div>
-        <Navbar/>
-        <Home/>
-      </div>
-    },
-
-    {
-      path: "/about",
-      element: 
-      <div>
-        <Navbar/>
-        <About/>
-      </div>
-    },
-
-    {
-      path: "/dashboard",
-      element: 
-      <div>
-        <Navbar/>
-        <Dashboard/>
-      </div>,
-      children:[
-        {
-          path: 'courses',
-          element:<Courses/>
-
-        }, 
-
-        {
-          path: 'mock-tests',
-          element:<MockTests/>
-
-        }, 
-
-        {
-          path: 'reports',
-          element: <Reports/>
-        }
-      ]
-    },
-    {
-      path: "/student/:id",
-      element:
-      <div>
-        <Navbar/>
-        <ParamComp/>
-      </div>
-    },
-    {
-      path: '*',
-      element: <NotFound/>
-    }
-  ]
-);
-
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RecipeLayout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "recipes", element: <RecipeList /> },
+      { path: "recipes/:id", element: <RecipeDetail /> },
+      { path: "favorites", element: <Favorites /> },
+      { path: "*", element: <h2>404 — Recipe not found 🍳</h2> },
+    ],
+  },
+]);
 
 function App() {
-  
-
-  return (
-    <>
-      <div>
-        <RouterProvider router={router}/>
-      </div>
-    </>
-  )
+  return <FavoritesProvider><RouterProvider router={router} /></FavoritesProvider>;
 }
 
-export default App
+export default App;

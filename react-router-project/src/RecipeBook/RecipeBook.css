@@ -1,0 +1,115 @@
+.recipe-app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f8fafc;
+}
+
+/* dark page background */
+body {
+  background: #0f172a;
+}
+
+/* ===== navbar ===== */
+.recipe-nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.recipe-nav a {
+  padding: 10px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #94a3b8;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.recipe-nav a:hover {
+  color: #f8fafc;
+  background: #1e293b;
+}
+
+/* NavLink adds .active automatically on the matching route */
+.recipe-nav a.active {
+  background: linear-gradient(90deg, #f97316, #ea580c);
+  color: white;
+}
+
+/* ===== recipe cards ===== */
+.recipe-card {
+  background: linear-gradient(145deg, #1e293b, #334155);
+  border: 1px solid #475569;
+  border-radius: 16px;
+  padding: 20px 25px;
+  margin-bottom: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.recipe-card h3 {
+  margin: 0 0 6px 0;
+}
+
+.recipe-meta {
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 0 0 12px 0;
+}
+
+.recipe-card a,
+.detail-back {
+  color: #fb923c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.recipe-card a:hover,
+.detail-back:hover {
+  text-decoration: underline;
+}
+
+/* ===== detail page ===== */
+.detail-card {
+  background: linear-gradient(145deg, #1e293b, #334155);
+  border: 1px solid #475569;
+  border-radius: 16px;
+  padding: 30px 35px;
+}
+
+.detail-card ul {
+  line-height: 1.9;
+  color: #e2e8f0;
+}
+
+.fav-btn {
+  padding: 11px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(90deg, #f97316, #ea580c);
+  color: white;
+  transition: all 0.25s ease;
+  margin: 10px 0 5px;
+}
+
+.fav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(249, 115, 22, 0.4);
+}
+
+.empty-msg {
+  color: #94a3b8;
+  text-align: center;
+  font-style: italic;
+  margin-top: 30px;
+}
