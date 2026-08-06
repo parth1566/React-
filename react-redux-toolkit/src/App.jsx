@@ -5,12 +5,16 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { decrement, increment, incrementByAmount, reset } from './features/counter/counterSlice'
+import { toggleTheme } from './features/theme/themeSlice'
+
+
 
 
 function App() {
 
   const [amount, setAmount] = useState(0);
   const count = useSelector((state) => state.counter.value);
+  const theme = useSelector((state) => state.theme.mode);
   const dispatch = useDispatch();
   
   function handleIncrementClick() {
@@ -27,6 +31,10 @@ function App() {
 
   function handleIncAmountClick() {
     dispatch(incrementByAmount(amount));
+  }
+
+  function handleToggleTheme() {
+    dispatch(toggleTheme())
   }
   return (
     <>
@@ -47,6 +55,10 @@ function App() {
        <br />
        <br />
        <button onClick={handleIncAmountClick}>Inc by Amount</button>
+       <br />
+       <br />
+       <p>Theme: {theme}</p>
+       <button onClick={handleToggleTheme}>Change Theme</button>
       </div>
     </>
   )
