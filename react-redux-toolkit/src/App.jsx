@@ -5,7 +5,8 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { decrement, increment, incrementByAmount, reset } from './features/counter/counterSlice'
-import { toggleTheme } from './features/theme/themeSlice'
+import { setTheme, toggleTheme } from './features/theme/themeSlice'
+import ThemeDisplay from './component/ThemeDisplay'
 
 
 
@@ -59,6 +60,11 @@ function App() {
        <br />
        <p>Theme: {theme}</p>
        <button onClick={handleToggleTheme}>Change Theme</button>
+       <br />
+       <br />
+       <button onClick={() => dispatch(setTheme("dark"))}>Force dark</button>
+       <button onClick={() => dispatch(setTheme("light"))}>Force light</button>
+       <ThemeDisplay/>
       </div>
     </>
   )
