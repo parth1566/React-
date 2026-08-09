@@ -2,30 +2,83 @@ import { useState, useEffect, useRef } from 'react'
 
 
 function App() {
-  const [count, setCount] = useState(0);
-  let val = useRef(0);
 
-  let btnRef = useRef();
+  const [time, setTime] = useState(0);
 
-  function handleIncrement() {
-    val.current = val.current + 1;
-    console.log("Value of val: ", val.current);
-    setCount(count + 1);
+  let timerRef = useRef(null);
+
+  function startTimer() {
+    timerRef.current = setInterval(() => {
+      setTime(time => time + 1);
+    }, 1000);
   }
 
-  // it runs on every render
-  useEffect(() => {
-    console.log("I run on every render");
-  })
+  function stopTimer() {
+    clearInterval(timerRef.current);
+    timerRef.current = null;
+  }
+
+  function resetTimer() {
+    stopTimer();
+    setTime(0);
+  }
+
+
+  // const [count, setCount] = useState(0);
+  // let val = useRef(0);
+
+  // let btnRef = useRef();
+
+  // function handleIncrement() {
+  //   val.current = val.current + 1;
+  //   console.log("Value of val: ", val.current);
+  //   setCount(count + 1);
+  // }
+
+  // // it runs on every render
+  // useEffect(() => {
+  //   console.log("I run on every render");
+  // })
   
 
-  function handleChangeColor() {
-    btnRef.current.style.backgroundColor = "Blue";
-  }
+  // function handleChangeColor() {
+  //   btnRef.current.style.backgroundColor = "Blue";
+  // }
 
   return (
     <>
       <div>
+        <h1>Stopwatch: {time} seconds</h1>
+        <button onClick={startTimer}>
+          Start
+        </button>
+        <br /><br />
+
+        <button onClick={stopTimer}>
+          Stop
+        </button>
+        <br /><br />
+
+        <button onClick={resetTimer}>
+          Reset
+        </button>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <div>
         <button 
         ref={btnRef}
         onClick={handleIncrement}>
@@ -42,7 +95,7 @@ function App() {
 
       <div>
         Count : {count}
-      </div>
+      </div> */}
     </>
   )
 }
