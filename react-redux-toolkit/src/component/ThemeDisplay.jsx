@@ -11,8 +11,6 @@ const ThemeDisplay = () => {
         dispatch(toggleTheme());
     }
 
-
-
    return (
      <div>
        <p>Current mode: {theme}</p>
