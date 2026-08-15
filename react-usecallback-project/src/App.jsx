@@ -4,17 +4,21 @@ import ExpensiveComponent from './components/ExpensiveComponent';
 
 function App() {
  
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   
 
-  const handleClick = useCallback(() => {
-    setCount(count + 1);
-  }, [count]);
+  // const handleClick = useCallback(() => {
+  //   setCount(count + 1);
+  // }, [count]);
 
   return (
     <>
+
     <div>
+      <ExpensiveComponent/>
+    </div>
+    {/* <div>
       Count: {count}
     </div>
 
@@ -31,7 +35,7 @@ function App() {
       buttonName = "Click me"
       handleClick= {handleClick}
       />
-    </div>
+    </div> */}
     </>
   )
 }
