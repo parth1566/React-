@@ -64,20 +64,6 @@ function App() {
         </button>
       </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {/* <div>
         <button 
         ref={btnRef}
